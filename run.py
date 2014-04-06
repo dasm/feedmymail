@@ -58,16 +58,8 @@ class RSSReader(object):
 
     def process_feed(self, url=''):
         feed = self._read_feed(url)
-        content = []
-        for post in feed.entries:
-            try:
-                summary = post.summary_detail.value
-            except AttributeError:
-                summary = post.summary
-            link = post.link
-            title = post.title
-            content.append((link, title, summary))
-
+        content = [(post.link, post.title, post.description) for post
+                   in feed.entries]
         return {'title': feed.feed.title, 'content': content}
 
     def _read_feed(self, url):
