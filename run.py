@@ -67,15 +67,6 @@ class RSSReader(object):
 
 
 class ContentBuilder(object):
-    with open('app/templates/header.html') as header:
-        template_header = header.read()
-
-    with open('app/templates/content.html') as content:
-        template_content = content.read()
-
-    with open('app/templates/email.html') as email:
-        template_email = email.read()
-
     def __init__(self, content):
         self.content = content
 
