@@ -191,7 +191,7 @@ if __name__ == '__main__':
         builder = ContentBuilder(content['content'])
         message = builder.build_html()
 
-        sender = 'john.doe@gmail.com'
+        sender = 'john.doe@google.com'
         email = Email('FeedMyMail', sender)
         email.add_message(content['title'], message)
         email.send()
